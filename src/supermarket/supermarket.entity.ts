@@ -16,7 +16,7 @@ export class SupermarketEntity {
    webpage: string;
 
 
-   @ManyToMany(() => CityEntity, city => city.supermarkets)
-   cities: CityEntity;
+   @ManyToMany(() => CityEntity, (city) => city.supermarkets)
+   cities: CityEntity[];
 
 }
