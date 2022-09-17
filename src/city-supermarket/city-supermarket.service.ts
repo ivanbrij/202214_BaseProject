@@ -20,7 +20,7 @@ export class CitySupermarketService {
         if (!supermarket)
           throw new BusinessLogicException("The supermarket with the given id was not found", BusinessError.NOT_FOUND);
        
-        const city: CityEntity = await this.cityRepository.findOne({where: {id: cityId}, relations: ["supermarkets", "exhibitions"]}) 
+        const city: CityEntity = await this.cityRepository.findOne({where: {id: cityId}, relations: ["supermarkets"]}) 
         if (!city)
           throw new BusinessLogicException("The city with the given id was not found", BusinessError.NOT_FOUND);
      
