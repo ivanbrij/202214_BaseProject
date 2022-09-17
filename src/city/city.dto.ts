@@ -1,5 +1,4 @@
-import {IsNotEmpty, IsString, IsNumber, IsEnum} from 'class-validator';
-import { PaisPermitido } from './city.entity';
+import {IsNotEmpty, IsString, IsNumber, IsEnum, Matches} from 'class-validator';
 export class CityDto {
 
  @IsString()
@@ -8,7 +7,7 @@ export class CityDto {
  
  @IsString()
  @IsNotEmpty()
- @IsEnum(PaisPermitido)
+ @Matches(/^ECUADOR|ARGENTINA|PARAGUAY$/i, {message: 'Countries allowed are: Ecuador, Argentina, Paraguay'})
  readonly country: string;
  
  @IsNumber()

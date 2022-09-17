@@ -18,9 +18,3 @@ export class CityEntity {
    supermarkets: SupermarketEntity[];
 
 }
-
-export enum PaisPermitido {
-   ARGENTINA = "ARGENTINA",
-   ECUADOR = "ECUADOR",
-   PARAGUAY = "PARAGUAY"
- }
