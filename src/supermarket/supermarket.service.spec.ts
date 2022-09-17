@@ -29,8 +29,8 @@ describe('SupermarketService', () => {
     for(let i = 0; i < 5; i++){
       const supermarket: SupermarketEntity = await repository.save({
       name: faker.company.name(),
-      latitude: faker.datatype.number(),
-      longitude: faker.datatype.number(),
+      latitude: faker.address.latitude(),
+      longitude: faker.address.longitude(),
       webpage: faker.internet.url()})
       supermarketsList.push(supermarket);
     }
@@ -64,8 +64,8 @@ describe('SupermarketService', () => {
     const supermarket: SupermarketEntity = {
       id: "",
       name: faker.company.name(),
-      latitude: faker.datatype.number(),
-      longitude: faker.datatype.number(),
+      latitude: faker.address.latitude(),
+      longitude: faker.address.longitude(),
       webpage: faker.internet.url(),
       cities: []
     }

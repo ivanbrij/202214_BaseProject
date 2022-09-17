@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, IsUrl, MinLength } from "class-validator";
+import { IsLatitude, IsLongitude, IsNotEmpty, IsNumber, IsString, IsUrl, MinLength } from "class-validator";
 
 export class SupermarketDto {
    @IsString()
@@ -6,13 +6,15 @@ export class SupermarketDto {
    @MinLength(10)
    readonly name: string;
 
-   @IsNumber()
+   @IsString()
    @IsNotEmpty()
-   readonly latitude: number;
+   @IsLatitude()
+   readonly latitude: string;
 
-   @IsNumber()
+   @IsString()
    @IsNotEmpty()
-   readonly longitude: number;
+   @IsLongitude()
+   readonly longitude: string;
 
    @IsUrl()
    @IsNotEmpty()
